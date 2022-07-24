@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="layoutUser" template="/views/layout/layout_user.jsp">
+		<put-attribute name="header_user" value="/views/layout/header_user.jsp"></put-attribute>
+		<put-attribute name="body_user" value=""></put-attribute>
+		<put-attribute name="footer_user" value="/views/layout/footer_user.jsp"></put-attribute>
+	</definition>
+	<definition name="home/*" extends="layoutUser">
+		<put-attribute name="body_user" value="/views/home/{1}.jsp"></put-attribute>
+	</definition>
+	<definition name="user/*" extends="layoutUser">
+		<put-attribute name="body_user" value="/views/user/{1}.jsp"></put-attribute>
+	</definition>
+	
+	
+	<definition name="layoutAdmin" template="/views/layout/layout_admin.jsp">
+		<put-attribute name="menu_admin" value="/views/layout/menu_admin.jsp"></put-attribute>
+		<put-attribute name="header_admin" value="/views/layout/header_admin.jsp"></put-attribute>
+		<put-attribute name="body_admin" value=""></put-attribute>
+		<put-attribute name="footer_admin" value="/views/layout/footer_admin.jsp"></put-attribute>
+	</definition>
+	<definition name="admin/*" extends="layoutAdmin" >
+		<put-attribute name="body_admin" value="/views/admin/{1}.jsp"></put-attribute>
+	</definition>
+</tiles-definitions>
